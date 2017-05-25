@@ -7,6 +7,10 @@ import org.junit.Test;
 
 public class WordCountTaskTest {
 	private static String driverName = "org.apache.hive.jdbc.HiveDriver";
+	
+	public static void main(String[] args) throws Exception {
+		new WordCountTaskTest().test();
+	}
 
 	@Test
 	public void test() throws Exception {
@@ -26,14 +30,15 @@ public class WordCountTaskTest {
 		}
 		
 		System.out.println("Conectando ao banco...");
-		Connection con = DriverManager.getConnection("jdbc:hive2://192.168.217.130:10000/default", "", "");
-	    PreparedStatement pstm = con.prepareStatement("select * from csvTable2");
+		Connection con = DriverManager.getConnection("jdbc:hive2://54.202.121.152:10000/default", "", "");
+	    //PreparedStatement pstm = con.prepareStatement("select * from csvTable2");
+		PreparedStatement pstm = con.prepareStatement("select * from cliente");
 	    
 	    System.out.println("Executando query...");
 	    ResultSet rs = pstm.executeQuery();
 	    
-	    System.out.println("Query executada.");
-	    if (rs.next()) {
+	    System.out.println("Query executada. >>>>>> ");
+	    while (rs.next()) {
 	    	System.out.println(rs.getInt(1) + ", " + rs.getString(2));
 	    }
 	}
