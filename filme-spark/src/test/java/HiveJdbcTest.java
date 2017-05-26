@@ -3,13 +3,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import org.junit.Test;
-
-public class WordCountTaskTest {
+public class HiveJdbcTest {
 	private static String driverName = "org.apache.hive.jdbc.HiveDriver";
 	
 	public static void main(String[] args) throws Exception {
-		new WordCountTaskTest().test();
+		new HiveJdbcTest().test();
 	}
 
 	public void test() throws Exception {
