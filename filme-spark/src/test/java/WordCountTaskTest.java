@@ -12,7 +12,6 @@ public class WordCountTaskTest {
 		new WordCountTaskTest().test();
 	}
 
-	@Test
 	public void test() throws Exception {
 		/*
 		 * String inputFile =
